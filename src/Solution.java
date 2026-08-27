@@ -1142,7 +1142,54 @@ public class Solution {
 
         return result;
     }
-    
+
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Map<Integer, Integer> counts = new HashMap<>();
+
+        for (int num : nums1) {
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int num : nums2) {
+            int count = counts.getOrDefault(num, 0);
+            if (count > 0) {
+                result.add(num);
+                counts.put(num, count - 1);
+            }
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
+    public boolean isPerfectSquare(int num) {
+        if (num == 0) {
+            return false;
+        }
+
+        if (num == 1) {
+            return true;
+        }
+
+        long start = 1;
+        long end = num;
+
+        while (start < end) {
+            long mid = start + (end - start) / 2;
+            long square = mid * mid;
+
+            if (square > num) {
+                end = mid;
+            }
+            else {
+                start = mid + 1;
+            }
+        }
+
+        start--;
+        return start * start == num;
+    }
 }
 
 
