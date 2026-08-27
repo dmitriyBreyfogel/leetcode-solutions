@@ -1055,6 +1055,94 @@ public class Solution {
 
         return true;
     }
+
+    public boolean isPowerOfThree(int n) {
+        if (n <= 0) {
+            return false;
+        }
+
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+
+        return n == 1;
+    }
+
+    public boolean isPowerOfFour(int n) {
+        if (n <= 0) {
+            return false;
+        }
+
+        while (n % 4 == 0) {
+            n /= 4;
+        }
+
+        return n == 1;
+    }
+
+    public void reverseString(char[] s) {
+        int j = s.length - 1;
+
+        for (int i = 0; i < s.length / 2; i++) {
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            j--;
+        }
+    }
+
+    public String reverseVowels(String s) {
+        char[] chars = s.toCharArray();
+        List<Character> vowels = new ArrayList<>();
+
+        for (char c : chars) {
+            if (isVowel(c)) {
+                vowels.add(c);
+            }
+        }
+
+        int index = vowels.size() - 1;
+
+        for (int i = 0; i < chars.length; i++) {
+            if (isVowel(chars[i])) {
+                chars[i] = vowels.get(index--);
+            }
+        }
+
+        return new String(chars);
+    }
+
+    private boolean isVowel(char c) {
+        String vowels = "aeiouAEIOU";
+        return vowels.contains(String.valueOf(c));
+    }
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums2 == null) {
+            return new int[0];
+        }
+
+        Set<Integer> set1 = new HashSet<>();
+        for (int i : nums1) {
+            set1.add(i);
+        }
+
+        Set<Integer> resultSet = new HashSet<>();
+        for (int i : nums2) {
+            if (set1.contains(i)) {
+                resultSet.add(i);
+            }
+        }
+
+        int[] result = new int[resultSet.size()];
+        int j = 0;
+        for (int i : resultSet) {
+            result[j++] = i;
+        }
+
+        return result;
+    }
+    
 }
 
 
