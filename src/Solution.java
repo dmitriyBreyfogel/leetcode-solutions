@@ -1282,6 +1282,66 @@ public class Solution {
 
         return i == s.length();
     }
+
+    public int sumOfLeftLeaves(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        return sum(root, false);
+    }
+
+    private int sum(TreeNode root, boolean isLeft) {
+        if (root == null) {
+            return 0;
+        }
+
+        if (root.left == null && root.right == null && isLeft) {
+            return root.val;
+        }
+
+        return sum(root.left, true) + sum(root.right, false);
+    }
+
+    public List<String> fizzBuzz(int n) {
+        List<String> result = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                result.add("FizzBuzz");
+            }
+
+            else if (i % 3 == 0) {
+                result.add("Fizz");
+            }
+
+            else if (i % 5 == 0) {
+                result.add("Buzz");
+            }
+
+            else {
+                result.add(String.valueOf(i));
+            }
+        }
+
+        return result;
+    }
+
+    public int thirdMax(int[] nums) {
+        TreeSet<Integer> set = new TreeSet<>();
+
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        if (set.size() < 3) {
+            return set.last();
+        }
+
+        set.pollLast();
+        set.pollLast();
+        return set.last();
+    }
 }
 
 
