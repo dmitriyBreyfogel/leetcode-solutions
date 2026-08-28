@@ -1190,6 +1190,98 @@ public class Solution {
         start--;
         return start * start == num;
     }
+
+    public int guessNumber(int n) {
+        int start = 1;
+        int end = n;
+
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+
+            if (guess(mid) == 0) {
+                return mid;
+            }
+
+            else if (guess(mid) == 1) {
+                start = mid + 1;
+            }
+
+            else {
+                end = mid;
+            }
+        }
+
+        return start;
+    }
+
+    private int guess(int n) {
+        return -1;
+    }
+
+    public boolean canConstruct(String ransomNote, String magazine) {
+        List<Character> chars = new ArrayList<>();
+
+        for (char c : magazine.toCharArray()) {
+            chars.add(c);
+        }
+
+        for (char c : ransomNote.toCharArray()) {
+            Character ch = c;
+            if (chars.contains(ch)) {
+                chars.remove(ch);
+            }
+            else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.lastIndexOf(s.charAt(i)) == i && s.indexOf(s.charAt(i)) == i) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public char findTheDifference(String s, String t) {
+        Map<Character, Integer> counts = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            counts.put(c, counts.getOrDefault(c, 0) + 1);
+        }
+
+        for (char c : t.toCharArray()) {
+            if (!counts.containsKey(c) || counts.get(c) == 0) {
+                return c;
+            }
+            counts.put(c, counts.get(c) - 1);
+        }
+
+        return ' ';
+    }
+
+    public boolean isSubsequence(String s, String t) {
+        if (s.isEmpty()) {
+            return true;
+        }
+
+        int i = 0;
+
+        for (int j = 0; j < t.length(); j++) {
+            if (s.length() > i) {
+                if (s.charAt(i) == t.charAt(j)) {
+                    i++;
+                }
+            }
+        }
+
+        return i == s.length();
+    }
 }
 
 
