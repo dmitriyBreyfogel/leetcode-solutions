@@ -1342,6 +1342,64 @@ public class Solution {
         set.pollLast();
         return set.last();
     }
+
+    public String addStrings(String num1, String num2) {
+        StringBuilder result = new StringBuilder();
+
+        int i = num1.length() - 1;
+        int j = num2.length() - 1;
+        int carry = 0;
+
+        while (i >= 0 || j >= 0 || carry != 0) {
+            int digit1 = i >= 0 ? Character.getNumericValue(num1.charAt(i)) : 0;
+            int digit2 = j >= 0 ? Character.getNumericValue(num2.charAt(j)) : 0;
+
+            int sum = digit1 + digit2 + carry;
+            result.append(sum % 10);
+            carry = sum / 10;
+
+            i--;
+            j--;
+        }
+
+        return result.reverse().toString();
+    }
+
+    public int countSegments(String s) {
+        if (s == null || s.trim().isEmpty()) {
+            return 0;
+        }
+
+        return s.trim().split("\\s+").length;
+    }
+
+    public int arrangeCoins(int n) {
+        int rows = 0;
+        int i = 1;
+
+        while (n >= i) {
+            n -= i;
+            rows++;
+            i++;
+        }
+
+        return rows;
+    }
+
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        boolean[] seen = new boolean[nums.length + 1];
+
+        for (int num : nums) {
+            seen[num] = true;
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i <= nums.length; i++) {
+            if (!seen[i]) {
+                result.add(i);
+            }
+        }
+
+        return result;
+    }
 }
-
-

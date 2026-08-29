@@ -44,10 +44,20 @@ public class Main {
         */
 
         // System.out.println(solution.isIsomorphic("badc", "baba"));
-        int[] nums = new int[] {
+        /*int[] nums = new int[] {
                 3, 0, 1
         };
 
-        System.out.println(solution.missingNumber(nums));
+        System.out.println(solution.missingNumber(nums));*/
+
+        //System.out.println(solution.countSegments("Hello, my name is John"));
+
+        //System.out.println(solution.arrangeCoins(8));
+
+        int[] nums = new int[] {
+                4,3,2,7,8,2,3,1
+        };
+
+        solution.findDisappearedNumbers(nums);
     }
 }
