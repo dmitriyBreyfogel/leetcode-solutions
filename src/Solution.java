@@ -1402,4 +1402,48 @@ public class Solution {
 
         return result;
     }
+
+    public int findContentChildren(int[] g, int[] s) {
+        Arrays.sort(g);
+        Arrays.sort(s);
+
+        int count = 0;
+        int i = 0;
+        int j = 0;
+
+        while (i < g.length && j < s.length) {
+            if (g[i] >= s[j]) {
+                count++;
+                i++;
+            }
+            j++;
+        }
+
+        return count;
+    }
+
+    public boolean repeatedSubstringPattern(String s) {
+        String doubled = s + s;
+        String trimmed = doubled.substring(1, doubled.length() - 1);
+        return trimmed.contains(s);
+    }
+
+    public int islandPerimeter(int[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int perimeter = 0;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 1) {
+                    if (i == 0 || grid[i - 1][j] == 0) perimeter++;
+                    if (i == rows - 1 || grid[i + 1][j] == 0) perimeter++;
+                    if (j == 0 || grid[i][j - 1] == 0) perimeter++;
+                    if (j == cols - 1 || grid[i][j + 1] == 0) perimeter++;
+                }
+            }
+        }
+
+        return perimeter;
+    }
 }
