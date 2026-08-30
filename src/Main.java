@@ -54,10 +54,12 @@ public class Main {
 
         //System.out.println(solution.arrangeCoins(8));
 
-        int[] nums = new int[] {
+        /*(int[] nums = new int[] {
                 4,3,2,7,8,2,3,1
         };
 
-        solution.findDisappearedNumbers(nums);
+        solution.findDisappearedNumbers(nums);*/
+
+        solution.licenseKeyFormatting("5F3Z-2e-9-w", 4);
     }
 }

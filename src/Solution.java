@@ -1446,4 +1446,60 @@ public class Solution {
 
         return perimeter;
     }
+
+    public String licenseKeyFormatting(String s, int k) {
+        StringBuilder str = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            if (c != '-') {
+                str.append(c);
+            }
+        }
+
+        String withoutDash = str.toString().toUpperCase();
+        StringBuilder result = new StringBuilder();
+
+        int count = 0;
+        for (int i = withoutDash.length() - 1; i >= 0; i--) {
+            if (count == k) {
+                result.append('-');
+                count = 0;
+            }
+            result.append(withoutDash.charAt(i));
+            count++;
+        }
+
+        return result.reverse().toString();
+    }
+
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int count = 0;
+
+        for (int num : nums) {
+            if (num == 1) {
+                count++;
+            }
+
+            if (num == 0) {
+                max = Math.max(max, count);
+                count = 0;
+            }
+        }
+
+        max = Math.max(max, count);
+        return max;
+    }
+
+    public int[] constructRectangle(int area) {
+        int W = (int) Math.sqrt(area);
+
+        while (area % W != 0) {
+            W--;
+        }
+
+        int L = area / W;
+
+        return new int[]{L, W};
+    }
 }
