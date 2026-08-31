@@ -60,6 +60,11 @@ public class Main {
 
         solution.findDisappearedNumbers(nums);*/
 
-        solution.licenseKeyFormatting("5F3Z-2e-9-w", 4);
+        //solution.licenseKeyFormatting("5F3Z-2e-9-w", 4);
+
+        int[] nums1 = {4,1,2};
+        int[] nums2 = {1,3,4,2};
+
+        solution.nextGreaterElement(nums1, nums2);
     }
 }

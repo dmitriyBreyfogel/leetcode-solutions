@@ -1502,4 +1502,92 @@ public class Solution {
 
         return new int[]{L, W};
     }
+
+    public int findPoisonedDuration(int[] timeSeries, int duration) {
+        if (timeSeries.length == 0) return 0;
+        if (timeSeries.length == 1) return duration;
+        if (duration == 0) return 0;
+
+        int sum = 0;
+
+        for (int i = 1; i < timeSeries.length; i++) {
+            int diff = timeSeries[i] - timeSeries[i - 1];
+            sum += Math.min(diff, duration);
+        }
+
+        return sum + duration;
+    }
+
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] res = new int[nums1.length];
+
+        for (int i = 0; i < nums2.length; i++) {
+            map.put(nums2[i], i);
+        }
+
+        for (int i = 0; i < nums1.length; i++) {
+            if (map.get(nums1[i]) == nums2.length - 1) {
+                res[i] = -1;
+                continue;
+            }
+
+            boolean found = false;
+            for (int j = map.get(nums1[i]) + 1; j < nums2.length; j++) {
+                if (nums2[j] > nums1[i]) {
+                    res[i] = nums2[j];
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                res[i] = -1;
+            }
+        }
+
+        return res;
+    }
+
+    public String[] findWords(String[] words) {
+        List<String> result = new ArrayList<>();
+
+        for (String word : words) {
+            if (canType(word)) {
+                result.add(word);
+            }
+        }
+
+        return result.toArray(new String[0]);
+    }
+
+    private boolean canType(String word) {
+        String FIRST_ROW = "qwertyuiop";
+        String SECOND_ROW = "asdfghjkl";
+        String THIRD_ROW = "zxcvbnm";
+
+        String normalizedWord = word.toLowerCase();
+
+        char c = normalizedWord.charAt(0);
+
+        if (FIRST_ROW.contains(String.valueOf(c))) {
+            return wordFromOneRowKeyboard(normalizedWord, FIRST_ROW);
+        }
+        else if (SECOND_ROW.contains(String.valueOf(c))) {
+            return wordFromOneRowKeyboard(normalizedWord, SECOND_ROW);
+        }
+        else {
+            return wordFromOneRowKeyboard(normalizedWord, THIRD_ROW);
+        }
+    }
+
+    private boolean wordFromOneRowKeyboard(String word, String symbolsKeyboardRow) {
+        for (char c : word.toCharArray()) {
+            if (!symbolsKeyboardRow.contains(String.valueOf(c))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
