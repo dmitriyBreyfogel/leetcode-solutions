@@ -1687,4 +1687,103 @@ public class Solution {
 
         return result;
     }
+
+    public boolean checkPerfectNumber(int num) {
+        int[] divisors = getDivisors(num);
+
+        int sum = 0;
+        for (int tmp : divisors) {
+            sum += tmp;
+        }
+
+        return sum == num;
+    }
+
+    private int[] getDivisors(int num) {
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 1; i <= num / 2; i++) {
+            if (num % i == 0) {
+                result.add(i);
+            }
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
+    public int fib(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        if (n == 1) {
+            return 1;
+        }
+
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public boolean detectCapitalUse(String word) {
+        if (word.isEmpty()) return false;
+        if (word.length() == 1) return true;
+
+        boolean allUpper = true;
+        for (int i = 0; i < word.length(); i++) {
+            if (!Character.isUpperCase(word.charAt(i))) {
+                allUpper = false;
+            }
+        }
+
+        if (allUpper) return true;
+
+        for (int i = 1; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i))) return false;
+        }
+
+        return true;
+    }
+
+    public int findLUSlength(String a, String b) {
+        if (a.equals(b)) return -1;
+        return Math.max(a.length(), b.length());
+    }
+
+    public int getMinimumDifference(TreeNode root) {
+        List<Integer> values = new ArrayList<>();
+        inorder(root, values);
+
+        int minDiff = Integer.MAX_VALUE;
+        for (int i = 1; i < values.size(); i++) {
+            minDiff = Math.min(minDiff, values.get(i) - values.get(i - 1));
+        }
+
+        return minDiff;
+    }
+
+    private void inorder(TreeNode node, List<Integer> values) {
+        if (node == null) return;
+
+        inorder(node.left, values);
+        values.add(node.val);
+        inorder(node.right, values);
+    }
+
+    public String reverseStr(String s, int k) {
+        char[] arr = s.toCharArray();
+
+        for (int i = 0; i < arr.length; i += 2 * k) {
+            int left = i;
+            int right = Math.min(i + k - 1, arr.length - 1);
+
+            while (left < right) {
+                char tmp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = tmp;
+                left++;
+                right--;
+            }
+        }
+
+        return new String(arr);
+    }
 }
