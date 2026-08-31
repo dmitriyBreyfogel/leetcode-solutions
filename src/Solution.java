@@ -1590,4 +1590,101 @@ public class Solution {
 
         return true;
     }
+
+    public int[] findMode(TreeNode root) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        traversingTree(root, map);
+
+        int max = Integer.MIN_VALUE;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == max) {
+                result.add(entry.getKey());
+            }
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
+    private void traversingTree(TreeNode root, Map<Integer, Integer> map) {
+        if (root == null) {
+            return;
+        }
+
+        map.put(root.val, map.getOrDefault(root.val, 0) + 1);
+
+        if (root.left != null) {
+            traversingTree(root.left, map);
+        }
+
+        if (root.right != null) {
+            traversingTree(root.right, map);
+        }
+    }
+
+    public String convertToBase7(int num) {
+        StringBuilder result = new StringBuilder();
+        boolean negative = false;
+
+        if (num == 0) {
+            return "0";
+        }
+
+        if (num < 0) {
+            num = -num;
+            negative = true;
+        }
+
+        while (num > 0) {
+            result.append(num % 7);
+            num /= 7;
+        }
+
+        if (negative) {
+            result.append('-');
+        }
+
+        return result.reverse().toString();
+    }
+
+    public String[] findRelativeRanks(int[] score) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < score.length; i++) {
+            map.put(score[i], i);
+        }
+
+        Arrays.sort(score);
+
+        String[] result = new String[score.length];
+
+        for (int i = score.length - 1; i >= 0; i--) {
+            int index = map.get(score[i]);
+
+            if (i == score.length - 1) {
+                result[index] = "Gold Medal";
+                continue;
+            }
+
+            if (i == score.length - 2) {
+                result[index] = "Silver Medal";
+                continue;
+            }
+
+            if (i == score.length - 3) {
+                result[index] = "Bronze Medal";
+                continue;
+            }
+
+            result[index] = String.valueOf(score.length - i);
+        }
+
+        return result;
+    }
 }
