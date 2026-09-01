@@ -1786,4 +1786,125 @@ public class Solution {
 
         return new String(arr);
     }
+
+    private int maxDiameter = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        height(root);
+        return maxDiameter;
+    }
+
+    private int height(TreeNode node) {
+        if (node == null) return 0;
+
+        int left = height(node.left);
+        int right = height(node.right);
+
+        maxDiameter = Math.max(maxDiameter, left + right);
+
+        return Math.max(left, right) + 1;
+    }
+
+    public boolean checkRecord(String s) {
+        int absent = 0;
+        int lateStreak = 0;
+
+        for (char c : s.toCharArray()) {
+            if (c == 'A') {
+                absent++;
+            }
+
+            if (c == 'L') {
+                lateStreak++;
+            } else {
+                lateStreak = 0;
+            }
+
+            if (absent >= 2 || lateStreak >= 3) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public String reverseWords(String s) {
+        String[] strings = s.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (String string : strings) {
+            result.append(new StringBuilder(string).reverse());
+            result.append(" ");
+        }
+
+        return result.toString().trim();
+    }
+
+    public int maxDepth(Node root) {
+        if (root == null) return 0;
+
+        int max = 0;
+        for (Node child : root.children) {
+            max = Math.max(maxDepth(child), max);
+        }
+
+        return max + 1;
+    }
+
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);
+
+        int sum = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            sum += nums[i];
+        }
+
+        return sum;
+    }
+
+    private int totalTilt = 0;
+
+    public int findTilt(TreeNode root) {
+        subtreeSum(root);
+        return totalTilt;
+    }
+
+    private int subtreeSum(TreeNode node) {
+        if (node == null) return 0;
+
+        int leftSum = subtreeSum(node.left);
+        int rightSum = subtreeSum(node.right);
+
+        totalTilt += Math.abs(leftSum - rightSum);
+
+        return leftSum + rightSum + node.val;
+    }
+
+    public int[][] matrixReshape(int[][] mat, int r, int c) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+
+        int size = rows * cols;
+        int targetSize = r * c;
+
+        if (size != targetSize) {
+            return mat;
+        }
+
+        Queue<Integer> tmp = new LinkedList<>();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                tmp.add(mat[i][j]);
+            }
+        }
+
+        int[][] result = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                result[i][j] = tmp.poll();
+            }
+        }
+
+        return result;
+    }
 }
