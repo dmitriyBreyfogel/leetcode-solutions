@@ -1936,4 +1936,55 @@ public class Solution {
 
         return Math.min(canEat, typesCount);
     }
+
+    // MEDIUM LEVEL
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode tmp = dummy;
+
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int first = l1 == null ? 0 : l1.val;
+            int second = l2 == null ? 0 : l2.val;
+
+            int sum = first + second + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+
+            tmp.next = new ListNode(sum);
+            tmp = tmp.next;
+
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
+        }
+
+        if (carry > 0) {
+            tmp.next = new ListNode(carry);
+        }
+
+        return dummy.next;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        if (s.isEmpty()) return 0;
+        if (s.length() == 1) return 1;
+
+        Set<Character> seen = new HashSet<>();
+        int left = 0;
+        int max = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+
+            while (seen.contains(c)) {
+                seen.remove(s.charAt(left));
+                left++;
+            }
+
+            seen.add(c);
+            max = Math.max(max, right - left + 1);
+        }
+
+        return max;
+    }
 }
