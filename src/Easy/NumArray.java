@@ -1,3 +1,5 @@
+package Easy;
+
 class NumArray {
 
     int[] nums;
@@ -18,7 +20,7 @@ class NumArray {
 }
 
 /**
- * Your NumArray object will be instantiated and called as such:
- * NumArray obj = new NumArray(nums);
+ * Your Easy.NumArray object will be instantiated and called as such:
+ * Easy.NumArray obj = new Easy.NumArray(nums);
  * int param_1 = obj.sumRange(left,right);
  */

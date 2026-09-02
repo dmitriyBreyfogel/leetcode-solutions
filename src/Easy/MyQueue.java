@@ -1,3 +1,5 @@
+package Easy;
+
 import java.util.Stack;
 
 class MyQueue {
@@ -35,8 +37,8 @@ class MyQueue {
 }
 
 /**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
+ * Your Easy.MyQueue object will be instantiated and called as such:
+ * Easy.MyQueue obj = new Easy.MyQueue();
  * obj.push(x);
  * int param_2 = obj.pop();
  * int param_3 = obj.peek();

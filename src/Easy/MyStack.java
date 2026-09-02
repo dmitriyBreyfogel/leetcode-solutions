@@ -1,3 +1,5 @@
+package Easy;
+
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Queue;
@@ -40,8 +42,8 @@ class MyStack {
 }
 
 /**
- * Your MyStack object will be instantiated and called as such:
- * MyStack obj = new MyStack();
+ * Your Easy.MyStack object will be instantiated and called as such:
+ * Easy.MyStack obj = new Easy.MyStack();
  * obj.push(x);
  * int param_2 = obj.pop();
  * int param_3 = obj.top();

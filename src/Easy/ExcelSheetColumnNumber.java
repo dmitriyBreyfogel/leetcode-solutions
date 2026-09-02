@@ -1,0 +1,17 @@
+package Easy;
+
+public class ExcelSheetColumnNumber {
+    public int titleToNumber(String columnTitle) {
+        if (columnTitle.isEmpty()) {
+            return 0;
+        }
+
+        int result = 0;
+
+        for (char c : columnTitle.toCharArray()) {
+            result += result * 26 + (c - 'A' + 1);
+        }
+
+        return result;
+    }
+}
