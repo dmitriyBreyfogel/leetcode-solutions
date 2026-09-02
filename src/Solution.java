@@ -1937,6 +1937,57 @@ public class Solution {
         return Math.min(canEat, typesCount);
     }
 
+    private List<Integer> result = new ArrayList<>();
+
+    public List<Integer> preorder(Node root) {
+        if (root == null) return result;
+
+        result.add(root.val);
+
+        if (root.children != null) {
+            for (Node child : root.children) {
+                preorder(child);
+            }
+        }
+
+        return result;
+    }
+
+    public List<Integer> postorder(Node root) {
+        if (root == null) return result;
+
+        if (root.children != null) {
+            for (Node child : root.children) {
+                postorder(child);
+            }
+        }
+
+        result.add(root.val);
+
+        return result;
+    }
+
+    public int findLHS(int[] nums) {
+        if (nums.length == 0) return 0;
+        if (nums.length == 1) return 1;
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        int maxLen = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int key = entry.getKey();
+            if (map.containsKey(key + 1)) {
+                int len = map.get(key) + map.get(key + 1);
+                maxLen = Math.max(maxLen, len);
+            }
+        }
+
+        return maxLen;
+    }
+
     // MEDIUM LEVEL
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
@@ -1986,5 +2037,30 @@ public class Solution {
         }
 
         return max;
+    }
+
+    public String longestPalindrome(String s) {
+        if (s.isEmpty()) return "";
+        if (s.length() <= 2) return s;
+
+        String longestPalindrome = "";
+        for (int i = 0; i < s.length(); i++) {
+            String first = expand(s, i, i);
+            String second = expand(s, i, i + 1);
+
+            if (first.length() > longestPalindrome.length()) longestPalindrome = first;
+            if (second.length() > longestPalindrome.length()) longestPalindrome = second;
+        }
+
+        return longestPalindrome;
+    }
+
+    private String expand(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+
+        return s.substring(left + 1, right);
     }
 }
