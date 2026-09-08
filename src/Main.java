@@ -1,12 +1,9 @@
+import Easy.BinaryNumberWithAlternatingBits;
 import Easy.MaximumAverageSubarray;
 
 public class Main {
     public static void main(String[] args) {
-        MaximumAverageSubarray ma = new MaximumAverageSubarray();
-        int[] nums = {
-                -1
-        };
-
-        ma.findMaxAverage(nums, 1);
+        BinaryNumberWithAlternatingBits tmp = new BinaryNumberWithAlternatingBits();
+        tmp.hasAlternatingBits(5);
     }
 }
