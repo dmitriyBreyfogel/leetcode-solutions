@@ -1,9 +1,10 @@
 import Easy.BinaryNumberWithAlternatingBits;
 import Easy.MaximumAverageSubarray;
+import Medium.CountAndSay;
 
 public class Main {
     public static void main(String[] args) {
-        BinaryNumberWithAlternatingBits tmp = new BinaryNumberWithAlternatingBits();
-        tmp.hasAlternatingBits(5);
+        CountAndSay countAndSay = new CountAndSay();
+        System.out.println(countAndSay.say("212"));
     }
 }
