@@ -1,8 +1,5 @@
 package Easy;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestPalindrome {
     public int longestPalindrome(String s) {
         int[] arr = new int[128];
