@@ -1,10 +1,16 @@
 import Easy.BinaryNumberWithAlternatingBits;
 import Easy.MaximumAverageSubarray;
+import Easy.NumberOfLinesToWriteString;
 import Medium.CountAndSay;
 
 public class Main {
     public static void main(String[] args) {
-        CountAndSay countAndSay = new CountAndSay();
-        System.out.println(countAndSay.say("212"));
+        NumberOfLinesToWriteString test = new NumberOfLinesToWriteString();
+        int[] arr = {
+                4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+        };
+
+        String s = "bbbcccdddaaa";
+        test.numberOfLines(arr, s);
     }
 }
