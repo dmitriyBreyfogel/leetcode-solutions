@@ -221,10 +221,6 @@ This repository contains my LeetCode solutions. The stats below are generated au
 ## Recently Touched
 
 {recent_section}
-
-## How It Updates
-
-GitHub Actions runs [`scripts/update_readme.py`](scripts/update_readme.py) on every push. It recounts the solutions in `src/Easy`, `src/Medium`, and `src/Hard`, rewrites this file, and commits the refreshed README when something changed.
 """
 
     return readme.replace("\r\n", "\n")
