@@ -9,11 +9,11 @@ This repository contains my LeetCode solutions. The stats below are generated au
 
 ## Current Progress
 
-| Difficulty | Solved | Share | Folder | Focus |
-| --- | ---: | ---: | --- | --- |
-| **Easy** | 162 | 86.6% | [`src/Easy`](src/Easy) | Warm-up tasks and fundamentals |
-| **Medium** | 25 | 13.4% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
-| **Hard** | 0 | 0.0% | Coming soon | Deep dives and tougher problems |
+| Difficulty | Solved | Share | Folder                     | Focus                               |
+| ---------- | -----: | ----: | -------------------------- | ----------------------------------- |
+| **Easy**   |    162 | 86.6% | [`src/Easy`](src/Easy)     | Warm-up tasks and fundamentals      |
+| **Medium** |     25 | 13.4% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
+| **Hard**   |      0 |  0.0% | Coming soon                | Deep dives and tougher problems     |
 
 ## Snapshot
 
@@ -29,7 +29,3 @@ This repository contains my LeetCode solutions. The stats below are generated au
 - [Flipping An Image](src/Easy/FlippingAnImage.java)
 - [Permutations2](src/Medium/Permutations2.java)
 - [Positions Of Large Groups](src/Easy/PositionsOfLargeGroups.java)
-
-## How It Updates
-
-GitHub Actions runs [`scripts/update_readme.py`](scripts/update_readme.py) on every push. It recounts the solutions in `src/Easy`, `src/Medium`, and `src/Hard`, rewrites this file, and commits the refreshed README when something changed.
