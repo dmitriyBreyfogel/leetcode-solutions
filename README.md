@@ -19,7 +19,7 @@ This repository contains my LeetCode solutions. The stats below are generated au
 
 - **Total solved:** 187
 - **Languages:** Java 187
-- **Last updated:** 2026-09-21 12:58 UTC
+- **Last updated:** 2026-09-21 13:04 UTC
 
 ## Recently Touched
 
@@ -29,7 +29,3 @@ This repository contains my LeetCode solutions. The stats below are generated au
 - [Flipping An Image](src/Easy/FlippingAnImage.java)
 - [Permutations2](src/Medium/Permutations2.java)
 - [Positions Of Large Groups](src/Easy/PositionsOfLargeGroups.java)
-
-## How It Updates
-
-GitHub Actions runs [`scripts/update_readme.py`](scripts/update_readme.py) on every push. It recounts the solutions in `src/Easy`, `src/Medium`, and `src/Hard`, rewrites this file, and commits the refreshed README when something changed.
