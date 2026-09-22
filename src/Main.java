@@ -3,7 +3,7 @@ import Medium.CountAndSay;
 
 public class Main {
     public static void main(String[] args) {
-        BackspaceStringCompare test = new BackspaceStringCompare();
-        test.backspaceCompare("y#fo##f", "y#f#o##f");
+        LemonadeChange test = new LemonadeChange();
+        test.lemonadeChange(new int[]{5,5,5,10,20});
     }
 }
