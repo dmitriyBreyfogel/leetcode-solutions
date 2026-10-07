@@ -1,8 +1,8 @@
 # LeetCode Solutions
 
 <p align="center">
-  <img alt="Total solved" src="https://img.shields.io/badge/Solved-239-2F80ED?style=for-the-badge">
-  <img alt="Easy solved" src="https://img.shields.io/badge/Easy-197-00B8A3?style=for-the-badge"> <img alt="Medium solved" src="https://img.shields.io/badge/Medium-42-FFC01E?style=for-the-badge"> <img alt="Hard solved" src="https://img.shields.io/badge/Hard-0-FF375F?style=for-the-badge">
+  <img alt="Total solved" src="https://img.shields.io/badge/Solved-240-2F80ED?style=for-the-badge">
+  <img alt="Easy solved" src="https://img.shields.io/badge/Easy-197-00B8A3?style=for-the-badge"> <img alt="Medium solved" src="https://img.shields.io/badge/Medium-43-FFC01E?style=for-the-badge"> <img alt="Hard solved" src="https://img.shields.io/badge/Hard-0-FF375F?style=for-the-badge">
 </p>
 
 This repository contains my LeetCode solutions. The stats below are generated automatically from the solution folders, so the README stays up to date after every push.
@@ -11,21 +11,21 @@ This repository contains my LeetCode solutions. The stats below are generated au
 
 | Difficulty | Solved | Share | Folder | Focus |
 | --- | ---: | ---: | --- | --- |
-| **Easy** | 197 | 82.4% | [`src/Easy`](src/Easy) | Warm-up tasks and fundamentals |
-| **Medium** | 42 | 17.6% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
+| **Easy** | 197 | 82.1% | [`src/Easy`](src/Easy) | Warm-up tasks and fundamentals |
+| **Medium** | 43 | 17.9% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
 | **Hard** | 0 | 0.0% | Coming soon | Deep dives and tougher problems |
 
 ## Snapshot
 
-- **Total solved:** 239
-- **Languages:** Java 239
-- **Last updated:** 2026-10-07 08:03 UTC
+- **Total solved:** 240
+- **Languages:** Java 240
+- **Last updated:** 2026-10-07 08:24 UTC
 
 ## Recently Touched
 
+- [Sort Colors](src/Medium/SortColors.java)
 - [Complement Of Base10 Integer](src/Easy/ComplementOfBase10Integer.java)
 - [Search2 D Matrix](src/Medium/Search2DMatrix.java)
 - [Set Matrix Zeroes](src/Medium/SetMatrixZeroes.java)
 - [Maximize Sum Of Array After K Negations](src/Easy/MaximizeSumOfArrayAfterKNegations.java)
 - [Edit Distance](src/Medium/EditDistance.java)
-- [Find Common Characters](src/Easy/FindCommonCharacters.java)
