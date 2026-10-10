@@ -1,8 +1,5 @@
 package Easy;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class BuddyStrings {
     public boolean buddyStrings(String s, String goal) {
         if (s.length() == 1) return false;
