@@ -1,7 +1,5 @@
 package Easy;
 
-import java.util.Arrays;
-
 public class MaximumAverageSubarray {
     public double findMaxAverage(int[] nums, int k) {
         int windowSum = 0;
