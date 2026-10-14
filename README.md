@@ -19,13 +19,13 @@ This repository contains my LeetCode solutions. The stats below are generated au
 
 - **Total solved:** 245
 - **Languages:** Java 245
-- **Last updated:** 2026-10-09 08:34 UTC
+- **Last updated:** 2026-10-14 14:57 UTC
 
 ## Recently Touched
 
+- [X Of Kind In Deck Of Cards](src/Easy/XOfKindInDeckOfCards.java)
+- [Most Common Word](src/Easy/MostCommonWord.java)
+- [Maximum Average Subarray](src/Easy/MaximumAverageSubarray.java)
+- [Buddy Strings](src/Easy/BuddyStrings.java)
 - [Binary Prefix Divisible By5](src/Easy/BinaryPrefixDivisibleBy5.java)
 - [Word Search](src/Medium/WordSearch.java)
-- [Subsets](src/Medium/Subsets.java)
-- [Partition Array Into Three Parts With Equal Sum](src/Easy/PartitionArrayIntoThreePartsWithEqualSum.java)
-- [Combinations](src/Medium/Combinations.java)
-- [Sort Colors](src/Medium/SortColors.java)
