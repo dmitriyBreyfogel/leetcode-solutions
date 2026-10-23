@@ -1,4 +1,4 @@
-package Medium;
+package Easy;
 
 public class ProjectionAreaOf3DShapes {
     public int projectionArea(int[][] grid) {
