@@ -18,7 +18,6 @@ public class Sqrt {
                 return mid;
             }
             else if (square < x) {
-                System.out.println(mid);
                 tmp = mid;
                 left = mid + 1;
             }
