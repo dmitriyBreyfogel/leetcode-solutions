@@ -2,12 +2,12 @@ package Easy;
 
 public class CanPlaceFlowers {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        int countPlaces = countFreePlaces(flowerbed, n);
+        int countPlaces = countFreePlaces(flowerbed);
 
         return countPlaces >= n;
     }
 
-    private int countFreePlaces(int[] flowerbed, int n) {
+    private int countFreePlaces(int[] flowerbed) {
         int countPlaces = 0;
         for (int i = 0; i < flowerbed.length; i++) {
             if (flowerbed[i] == 0) {
