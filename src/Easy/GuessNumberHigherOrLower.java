@@ -7,12 +7,13 @@ public class GuessNumberHigherOrLower {
 
         while (start < end) {
             int mid = start + (end - start) / 2;
+            int result = guess(mid);
 
-            if (guess(mid) == 0) {
+            if (result == 0) {
                 return mid;
             }
 
-            else if (guess(mid) == 1) {
+            else if (result == 1) {
                 start = mid + 1;
             }
 
