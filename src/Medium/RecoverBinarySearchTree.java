@@ -3,9 +3,9 @@ package Medium;
 import Common.TreeNode;
 
 public class RecoverBinarySearchTree {
-    TreeNode prev = null;
-    TreeNode wrong1 = null;
-    TreeNode wrong2 = null;
+    TreeNode prev;
+    TreeNode wrong1;
+    TreeNode wrong2;
 
     public void recoverTree(TreeNode root) {
         inorder(root);
