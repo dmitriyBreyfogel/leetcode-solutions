@@ -3,7 +3,7 @@ package Easy;
 import Common.TreeNode;
 
 public class BinaryTreeTilt {
-    private int totalTilt = 0;
+    private int totalTilt;
 
     public int findTilt(TreeNode root) {
         subtreeSum(root);
