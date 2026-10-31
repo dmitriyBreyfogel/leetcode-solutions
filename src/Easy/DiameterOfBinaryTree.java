@@ -3,7 +3,7 @@ package Easy;
 import Common.TreeNode;
 
 public class DiameterOfBinaryTree {
-    private int maxDiameter = 0;
+    private int maxDiameter;
 
     public int diameterOfBinaryTree(TreeNode root) {
         height(root);
