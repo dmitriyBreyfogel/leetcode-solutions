@@ -1,8 +1,8 @@
 # LeetCode Solutions
 
 <p align="center">
-  <img alt="Total solved" src="https://img.shields.io/badge/Solved-263-2F80ED?style=for-the-badge">
-  <img alt="Easy solved" src="https://img.shields.io/badge/Easy-203-00B8A3?style=for-the-badge"> <img alt="Medium solved" src="https://img.shields.io/badge/Medium-60-FFC01E?style=for-the-badge"> <img alt="Hard solved" src="https://img.shields.io/badge/Hard-0-FF375F?style=for-the-badge">
+  <img alt="Total solved" src="https://img.shields.io/badge/Solved-264-2F80ED?style=for-the-badge">
+  <img alt="Easy solved" src="https://img.shields.io/badge/Easy-203-00B8A3?style=for-the-badge"> <img alt="Medium solved" src="https://img.shields.io/badge/Medium-61-FFC01E?style=for-the-badge"> <img alt="Hard solved" src="https://img.shields.io/badge/Hard-0-FF375F?style=for-the-badge">
 </p>
 
 This repository contains my LeetCode solutions. The stats below are generated automatically from the solution folders, so the README stays up to date after every push.
@@ -11,21 +11,21 @@ This repository contains my LeetCode solutions. The stats below are generated au
 
 | Difficulty | Solved | Share | Folder | Focus |
 | --- | ---: | ---: | --- | --- |
-| **Easy** | 203 | 77.2% | [`src/Easy`](src/Easy) | Warm-up tasks and fundamentals |
-| **Medium** | 60 | 22.8% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
+| **Easy** | 203 | 76.9% | [`src/Easy`](src/Easy) | Warm-up tasks and fundamentals |
+| **Medium** | 61 | 23.1% | [`src/Medium`](src/Medium) | Core algorithms and data structures |
 | **Hard** | 0 | 0.0% | Coming soon | Deep dives and tougher problems |
 
 ## Snapshot
 
-- **Total solved:** 263
-- **Languages:** Java 263
-- **Last updated:** 2026-11-01 11:28 UTC
+- **Total solved:** 264
+- **Languages:** Java 264
+- **Last updated:** 2026-11-01 14:22 UTC
 
 ## Recently Touched
 
+- [Binary Tree Level Order Traversal](src/Medium/BinaryTreeLevelOrderTraversal.java)
 - [Diameter Of Binary Tree](src/Easy/DiameterOfBinaryTree.java)
 - [Binary Tree Tilt](src/Easy/BinaryTreeTilt.java)
 - [Recover Binary Search Tree](src/Medium/RecoverBinarySearchTree.java)
 - [Guess Number Higher Or Lower](src/Easy/GuessNumberHigherOrLower.java)
 - [Can Place Flowers](src/Easy/CanPlaceFlowers.java)
-- [Two Sum](src/Easy/TwoSum.java)
